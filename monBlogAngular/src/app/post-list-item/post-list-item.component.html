@@ -1,3 +1,12 @@
-<p>
-  post-list-item works!
-</p>
+<div [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postLoveIts > 0,
+                'list-group-item-danger': postLoveIts < 0
+              }">
+  <div class="pull-right text-muted">{{postDate | date: "M/d/yyyy, HH:mm a"}}</div>
+  <h3 [ngStyle]="{color: getColor()}">{{ postTitle }} </h3>
+  <p>{{postContent}}</p>
+
+  <button class="btn btn-success"  (click)="onLoveIt()">Love it!</button>
+  <button class="btn btn-danger"  (click)="onDontLoveIt()">Don't Love it!</button>
+
+</div>

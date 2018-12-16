@@ -1,3 +1,6 @@
-<p>
-  post-list works!
-</p>
+<app-post-list-item *ngFor="let post of posts"
+    [postTitle]="post.title"
+    [postContent]="post.content"
+    [postDate]="post.created_at"
+    [postLoveIts]="post.loveIts">
+</app-post-list-item>
